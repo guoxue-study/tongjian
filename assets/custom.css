@@ -23,7 +23,7 @@ section {
   height: 720px;
   justify-content: center;
   /* letter-spacing: 3px; */
-  line-height: 1.5;
+  line-height: 1.8;
   padding: 30px 70px;
   position: relative;
   text-align: left;
@@ -231,8 +231,7 @@ section table > tbody > tr:not(:last-child) > td, section table > tbody > tr:not
   border-bottom: 1px solid currentColor;
 }
 section blockquote {
-  font-size: 110%;
-  line-height: 1.3;
+  color: #9a4d55;
   padding: 0 2em;
   position: relative;
   z-index: 0;
@@ -258,7 +257,10 @@ section blockquote > *:last-child {
   margin-bottom: 0;
 }
 strong {
-  color: #33b1dd;
+  /* color: #33b1dd; */
+  color: #216583;
+  font-size: 90%;
+  font-weight: bold;
 }
 
 em  {
@@ -271,7 +273,8 @@ abbr[data-title] {
   position: relative;
 
   /* ensure consistent styling across browsers */
-  text-decoration: underline dotted;
+  /* text-decoration: underline dotted; */
+  border-bottom: 1px dashed black;
 }
 
 abbr[data-title]:hover::after,
@@ -291,7 +294,7 @@ abbr[data-title]:focus::after {
   color: #fff;
   border-radius: 3px;
   box-shadow: 1px 1px 5px 0 rgba(0,0,0,0.4);
-  font-size: 20px;
+  font-size: 16px;
   padding: 3px 5px;
 }
 
