@@ -12,9 +12,8 @@ MARP=marp --engine $(ENGINE) --theme $(ASSET_DIR)/custom.css --html true
 init: install dep
 	@echo "Initializing the repo..."
 
-travis-init:
+travis-init: install dep
 	@echo "Initialize software required for travis (normally ubuntu software)"
-
 
 install:
 	@echo "Install software required for this repo..."
