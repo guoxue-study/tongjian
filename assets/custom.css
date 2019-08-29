@@ -298,5 +298,11 @@ abbr[data-title]:focus::after {
   padding: 3px 5px;
 }
 
+.html5-audio-player {
+  width: 150px;
+  height: 24px;
+  position: relative;
+  float: right;
+}
 
 /* @import url('https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/styles/default.min.css'); */

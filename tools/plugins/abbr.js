@@ -98,16 +98,16 @@ module.exports = function sub_plugin(md) {
 
     regSimple = new RegExp(
       '(?:' +
-        Object.keys(state.env.abbreviations)
-          .map(function(x) {
-            return x.substr(1);
-          })
-          .sort(function(a, b) {
-            return b.length - a.length;
-          })
-          .map(escapeRE)
-          .join('|') +
-        ')'
+      Object.keys(state.env.abbreviations)
+        .map(function (x) {
+          return x.substr(1);
+        })
+        .sort(function (a, b) {
+          return b.length - a.length;
+        })
+        .map(escapeRE)
+        .join('|') +
+      ')'
     );
 
     regText =
@@ -122,10 +122,10 @@ module.exports = function sub_plugin(md) {
       '])' +
       '(' +
       Object.keys(state.env.abbreviations)
-        .map(function(x) {
+        .map(function (x) {
           return x.substr(1);
         })
-        .sort(function(a, b) {
+        .sort(function (a, b) {
           return b.length - a.length;
         })
         .map(escapeRE)
