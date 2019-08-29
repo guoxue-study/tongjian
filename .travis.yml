@@ -2,7 +2,7 @@ language: javascript
 dist: xenial
 branches:
   only:
-    - master
+  - master
 before_script: make travis-init
 script: make travis
 deploy:
@@ -14,7 +14,6 @@ deploy:
   - provider: releases
     skip_cleanup: true
     api_key:
-      secure:
+      secure: ZX2GfVxbN3lczjHz8e9v34t4SnTJLbGlk1YapSmucUzX0odz9+IV0G6On8Ue66DCt3IQ+obeoqdZuwccXJzGIJN60omTLBN+cf5KhxHfaNsnn5uclBPcERrT1904EnmjHGei5IDDTaJtt12UFMPXGkIwaacqyJGmYkhEQRac3EC2zu+iYF4QpFlZoITpM9D0+xnBfFAghgKRSjiU79y2PUxSeUGdP56jNZePP3tyBsT5TqGwBnsBtIDjbCQAKdvYZgSLrotP08R5aSPNK/M/vLDDuhPsT/xYRrVaaqM33z0tt4z5AsGTfZrtn35xBlNDFAHnsN7p6w9ltOPeWryC5vycwvVa7fX2/Oouwwff7gweu/rQ9z3taBnmwVfdC8A+BkStbf9badKTOLBmwqfJWsSfMfzVsAFVz1ubPIPl3pz0Kt/wNhLLtVZ5cU8Vn6EwpGamEYz9/SiH5SpM9jPeTYDM11wzpgVq6Q+zFrzfX9pjY0fe9f96xQgNSrpH4Pgy63GAsOP07tnBQYFWHdLee1Ao97f4JujxnK3yji8ZCp/YNDFvOGuvrKFbnhBoowGKtvswKiDAdFzlkSnyuOwkQ5r3kgMlucYLsCJKK8s2eEQfUkg1syuIHuYhhHRvlRw6GxFoimpfQTfmRcOzelUuSj3ln0ZjAPVKnMSALHCegys=
     on:
       repo: tyrchen/tongjian
-      branch: master
