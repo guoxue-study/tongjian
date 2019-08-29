@@ -9,12 +9,12 @@ const SENTENCE_BREAKER = '。'
 async function read(filename) {
   console.log(`process ${filename}`)
   const content = await fs.readFile(filename, 'utf8')
-  const name = path.basename(filename, '.md')
+
   return content
     .split(BREAKER)
     .map(c => split_sentence(c, MAX_BYTES))
     .flat(100)
-    .map((c, idx) => normalize(c, name, idx))
+    .map((c, idx) => normalize(c, idx))
 }
 
 function split_sentence(text, max_len) {
@@ -24,11 +24,11 @@ function split_sentence(text, max_len) {
   return [text.substring(0, idx+1), split_sentence(text.substring(idx+2), max_len)]
 }
 
-function normalize(text, name, idx) {
+function normalize(text, idx) {
   if (text.startsWith('#')) return {text: text}
   if (text.endsWith('）')) return {text: `## ${text}`}
   if (text.length < 8 && /皇帝|王/.test(text)) return {text: `# ${text}`}
-  return {text: text, audio: path.join(name, `${idx}.mp3`)}
+  return {text: text, audio: `${idx}.mp3`}
 }
 
 async function process_file(in_file, out_file) {
