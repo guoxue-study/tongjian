@@ -3,7 +3,11 @@
 /* @import url('https://fonts.googleapis.com/css?family=Open+Sans&display=swap'); */
 @import url('https://fonts.googleapis.com/css?family=Cairo&display=swap');
 
-
+@media print {
+  .html5-audio-player {
+    visibility: hidden;
+  }
+}
 
 /*!
  * Marp / Marpit Uncover theme
@@ -232,6 +236,7 @@ section table > tbody > tr:not(:last-child) > td, section table > tbody > tr:not
 }
 section blockquote {
   color: #9a4d55;
+  font-size: 85%;
   padding: 0 2em;
   position: relative;
   z-index: 0;
