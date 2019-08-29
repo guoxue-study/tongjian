@@ -3,8 +3,9 @@ SRC_DIR=$(TOP_DIR)/slides
 TARGET_DIR=$(TOP_DIR)/_build
 ASSET_DIR=$(TOP_DIR)/assets
 TOOL_DIR=$(TOP_DIR)/tools
+CLI_DIR=$(TOOL_DIR)/cli
 
-ENGINE=$(TOOL_DIR)/engine.js
+ENGINE=$(CLI_DIR)/engine.js
 
 MARP=marp --engine $(ENGINE) --theme $(ASSET_DIR)/custom.css
 
