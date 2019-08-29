@@ -1,0 +1,20 @@
+language: javascript
+dist: xenial
+branches:
+  only:
+    - master
+before_script: make travis-init
+script: make travis
+deploy:
+  - provider: script
+    skip_cleanup: true
+    script: make travis-deploy
+    on:
+      branch: master
+  - provider: releases
+    skip_cleanup: true
+    api_key:
+      secure:
+    on:
+      repo: tyrchen/tongjian
+      branch: master

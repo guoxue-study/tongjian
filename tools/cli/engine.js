@@ -8,8 +8,8 @@ const markdownItSup = require('markdown-it-sup');
 const markdownItSub = require('markdown-it-sub');
 const { html5Media } = require('markdown-it-html5-media');
 
-module.exports = opts =>
-  new Marp(opts)
+module.exports = opts => {
+  return new Marp(opts)
     .use(markdownItMark)
     // .use(markdownItFootnote)
     .use(markdownItAbbr)
@@ -18,3 +18,5 @@ module.exports = opts =>
     .use(markdownItEmoji)
     .use(html5Media)
     .use(markdownItContainer, 'note');
+
+}
