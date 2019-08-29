@@ -1,20 +1,43 @@
 #!/usr/local/bin/node
 
+const existsSync = require('fs').existsSync
+const fs = require('fs').promises
+const path = require('path')
+
 const TTS = require('xf-tts')
-let tts = new TTS('5d66f115', process.env.XF_TTS_KEY, { voice_name: 'x_nannan', volume: '70' })
+let tts = new TTS(process.env.XF_TTS_ID, process.env.XF_TTS_KEY, { voice_name: 'x_nannan', volume: '70' })
 
-async function main() {
-  const text = '文王序《易》，以乾坤为首。孔子系之曰："天尊地卑，乾坤定矣，卑高以陈，贵贱位矣。"言君臣之位，犹天地之不可易也。《春秋》抑诸侯，尊周室，王人虽微，序于诸侯之上，以是见圣人于君臣之际，未尝不 惓惓 也。非有桀、纣之暴，汤、武之仁，人归之，天命之，君臣之分，当守节伏死而已矣。是故以微子而代纣，则成汤配天矣；以季札而君吴，则太伯血食矣。然二子宁亡国而不为者，诚以礼之大节不可乱也。故曰：礼莫大于分也。'
+async function gen_mp3(text, filename) {
+  console.log(text)
+  if (existsSync(filename)) return console.log('already exists: ', filename)
 
-  const text1 = '初，智宣子将以瑶为后。智果曰："不如宵也。瑶之贤于人者五，其不逮者一也。美鬓长大则贤，射御足力则贤，伎艺毕给则贤，巧文辩慧则贤，强毅果敢则贤，如是而甚不仁。夫以其五贤陵人，而以不仁行之，其谁能待之？若果立瑶也，智宗必灭。"弗听，智果别族于太史为辅氏。赵简子之子，长曰伯鲁，幼曰无恤。将置后，不知所立。乃书训戒之辞于二简，以授二子曰："谨识之。"三年而问之，伯鲁不能举其辞，求其简，已失之矣。问无恤，诵其辞甚习，求其简，出诸袖中而奏之。于是简子以无恤为贤，立以为后。简子使 尹铎 为晋阳。请曰："以为茧丝乎？抑为保障乎？"'
   try {
     let data = await tts.start({
-      text: text1
+      text: text
     })
-    let file = await data.file('./test1.mp3') // 传入一个输出的路径
-    console.log('文件输出至：', file)
+    let file = await data.file(filename)
+    console.log('generated: ', filename)
   } catch (error) {
     console.error(error)
+  }
+}
+
+async function main() {
+  const argv = require('yargs')
+  .option('input', {
+    alias: 'i',
+    describe: 'input file containing json metadata'
+  })
+  .demandOption(['input'], 'Please provide input file')
+  .help()
+  .argv
+
+  const content = JSON.parse(await fs.readFile(argv.i, 'utf8'))
+  const name = path.basename(argv.i, '.json')
+  const results = content.filter(item => item.audio && item.text !== '')
+
+  for (const item of results) {
+    await gen_mp3(item.text, path.join('slides/assets/audios', name, item.audio))
   }
 }
 

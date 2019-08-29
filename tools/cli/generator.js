@@ -17,9 +17,10 @@ async function read(filename) {
   const content = JSON.parse(await fs.readFile(filename, 'utf8'))
   const name = path.basename(filename, '.json')
   const audio_path = path.join('assets/audios', name)
-  await fs.mkdir(audio_path, { recursive: true })
+  await fs.mkdir(path.join('slides', audio_path), { recursive: true })
 
   return gen_header(content[0].text) + content
+    .filter(item => item.text !== '')
     .map(item => normalize(item, audio_path))
     .join('\n\n---\n\n')
 }

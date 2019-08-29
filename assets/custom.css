@@ -158,7 +158,7 @@ section h6 {
   font-size: 0.8em;
   letter-spacing: 1px;
 }
-section header, section footer, section .note {
+section header, section footer, section .note, section .html5-audio-player {
   position: absolute;
   z-index: 1;
   left: 70px;
@@ -166,7 +166,7 @@ section header, section footer, section .note {
   font-size: 0.45em;
   letter-spacing: 1px;
 }
-section header {
+section header, section .html5-audio-player {
   top: 30px;
 }
 section footer, section .note {
@@ -299,10 +299,10 @@ abbr[data-title]:focus::after {
 }
 
 .html5-audio-player {
-  width: 150px;
+  /* width: 150px; */
   height: 24px;
-  position: relative;
-  float: right;
+  right: 70px;
+  left: inherit;
 }
 
 /* @import url('https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/styles/default.min.css'); */
