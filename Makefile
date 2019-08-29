@@ -53,3 +53,7 @@ gen-meta:
 	@tools/cli/normalizer.js -i resources/_src -o /tmp/tongjian/_meta
 $(TARGET_DIR):
 	@mkdir -p $@
+
+include .makefiles/*.mk
+
+.PHONY: build init travis-init install dep travis clean run build build-pdf travis-deploy release create-pr bump-version
