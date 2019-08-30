@@ -5,7 +5,14 @@ const fs = require('fs').promises
 const path = require('path')
 
 const TTS = require('xf-tts')
-let tts = new TTS(process.env.XF_TTS_ID, process.env.XF_TTS_KEY, { voice_name: 'x_nannan', volume: '70' })
+const env = process.env
+const app = env.APP || ''
+const appId = env[`XF_TTS_ID${app}`]
+const appKey = env[`XF_TTS_KEY${app}`]
+
+console.log(`Using app${app}: id ${appId}`)
+
+let tts = new TTS(appId, appKey, { voice_name: 'x_nannan', volume: '70' })
 
 async function gen_mp3(text, filename) {
   console.log(text)
@@ -24,13 +31,13 @@ async function gen_mp3(text, filename) {
 
 async function main() {
   const argv = require('yargs')
-  .option('input', {
-    alias: 'i',
-    describe: 'input file containing json metadata'
-  })
-  .demandOption(['input'], 'Please provide input file')
-  .help()
-  .argv
+    .option('input', {
+      alias: 'i',
+      describe: 'input file containing json metadata'
+    })
+    .demandOption(['input'], 'Please provide input file')
+    .help()
+    .argv
 
   const content = JSON.parse(await fs.readFile(argv.i, 'utf8'))
   const name = path.basename(argv.i, '.json')

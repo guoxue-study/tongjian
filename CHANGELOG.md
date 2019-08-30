@@ -1,3 +1,6 @@
+## 0.6.0 (August 30, 2019)
+- revise chapter 003 and add resources til 035
+
 ## 0.5.0 (August 30, 2019)
 - revise chapter 002
 

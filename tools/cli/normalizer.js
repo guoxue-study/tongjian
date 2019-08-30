@@ -21,14 +21,14 @@ function split_sentence(text, max_len) {
 
   if (Buffer.byteLength(text) <= max_len) return text
   let idx = text.lastIndexOf(SENTENCE_BREAKER, 330)
-  return [text.substring(0, idx+1), split_sentence(text.substring(idx+2), max_len)]
+  return [text.substring(0, idx + 1), split_sentence(text.substring(idx + 1), max_len)]
 }
 
 function normalize(text, idx) {
-  if (text.startsWith('#')) return {text: text}
-  if (text.endsWith('）')) return {text: `## ${text}`}
-  if (text.length < 8 && /皇帝|王/.test(text)) return {text: `# ${text}`}
-  return {text: text, audio: `${idx}.mp3`}
+  if (text.startsWith('#')) return { text: text }
+  if (text.endsWith('）')) return { text: `## ${text}` }
+  if (text.length < 8 && /皇帝|王/.test(text)) return { text: `# ${text}` }
+  return { text: text, audio: `${idx}.mp3` }
 }
 
 async function process_file(in_file, out_file) {
@@ -42,17 +42,17 @@ async function process_file(in_file, out_file) {
 
 async function main() {
   const argv = require('yargs')
-  .option('input', {
-    alias: 'i',
-    describe: 'input path containing all md files'
-  })
-  .option('output', {
-    alias: 'o',
-    describe: 'output path to put generated json files'
-  })
-  .demandOption(['input', 'output'], 'Please provide both input path and output path')
-  .help()
-  .argv
+    .option('input', {
+      alias: 'i',
+      describe: 'input path containing all md files'
+    })
+    .option('output', {
+      alias: 'o',
+      describe: 'output path to put generated json files'
+    })
+    .demandOption(['input', 'output'], 'Please provide both input path and output path')
+    .help()
+    .argv
 
 
   const files = await fs.readdir(argv.i)
