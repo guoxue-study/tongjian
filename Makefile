@@ -53,6 +53,9 @@ gen-meta:
 $(TARGET_DIR):
 	@mkdir -p $@
 
+merge-audio: # need to define CHAPTER, N1 and N2, e.g. N1=23 N2=24, result will be 23_24.mp3
+	@cd slides/assets/audios/$(CHAPTER) && ffmpeg -i "concat:$(N1).mp3|$(N2).mp3" -acodec copy $(N1)_$(N2).mp3
+
 include .makefiles/*.mk
 
 .PHONY: build init travis-init install dep travis clean run build build-pdf travis-deploy release create-pr bump-version
