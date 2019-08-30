@@ -97,7 +97,7 @@ make dep
 
 脚注比较特殊，正常的 markdown 脚注会放在整个文档最后，并不方便阅读，这里生成了 `<div class="note">` 完成。以这张 slide 为例：
 
-![](assets/snapshots/snapshot2.jpg)
+![](assets/snapshots/snapshot4.jpg)
 
 其语法是在要注释的地方使用上标语法 `^xx^`，然后用 `::: note` 和 `:::` 标注脚注的开始和结束。
 
