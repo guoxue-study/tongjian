@@ -49,7 +49,7 @@ gen-slides:
 
 gen-meta:
 	@mkdir -p /tmp/tongjian/_meta
-	@tools/cli/normalizer.js -i resources/_src -o /tmp/tongjian/_meta
+	@tools/cli/normalizer.js -i resources/_src -o resources/_meta
 $(TARGET_DIR):
 	@mkdir -p $@
 

@@ -21,7 +21,10 @@ function split_sentence(text, max_len) {
 
   if (Buffer.byteLength(text) <= max_len) return text
   let idx = text.lastIndexOf(SENTENCE_BREAKER, 330)
-  return [text.substring(0, idx + 1), split_sentence(text.substring(idx + 1), max_len)]
+  if (idx < 0) console.log(text)
+  let idx1 = idx + 1;
+  if (text.substr(idx + 1, 1) === '”') idx1 = idx + 2;
+  return [text.substr(0, idx + 1), split_sentence(text.substr(idx1), max_len)]
 }
 
 function normalize(text, idx) {
@@ -34,7 +37,7 @@ function normalize(text, idx) {
 async function process_file(in_file, out_file) {
   try {
     let data = await read(in_file)
-    await fs.writeFile(out_file, JSON.stringify(data))
+    await fs.writeFile(out_file, JSON.stringify(data, null, 2))
   } catch (e) {
     console.log(e)
   }
