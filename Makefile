@@ -45,7 +45,7 @@ gen-audios: # must pass CHAPTER=xxx
 
 gen-slides:
 	@mkdir -p /tmp/tongjian/slides
-	@tools/cli/generator.js -i resources/_meta -o /tmp/tongjian
+	@tools/cli/generator.js -i resources/_meta -o slides
 
 gen-meta:
 	@mkdir -p /tmp/tongjian/_meta
