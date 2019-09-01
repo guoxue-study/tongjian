@@ -20,7 +20,7 @@ async function gen_mp3(text, filename) {
 
   try {
     let data = await tts.start({
-      text: text
+      text: text.replace(/”$/, '').replace(/。$/, '')
     })
     let file = await data.file(filename)
     console.log('generated: ', filename)

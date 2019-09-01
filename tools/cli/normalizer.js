@@ -22,9 +22,8 @@ function split_sentence(text, max_len) {
   if (Buffer.byteLength(text) <= max_len) return text
   let idx = text.lastIndexOf(SENTENCE_BREAKER, 330)
   if (idx < 0) console.log(text)
-  let idx1 = idx + 1;
-  if (text.substr(idx + 1, 1) === '”') idx1 = idx + 2;
-  return [text.substr(0, idx + 1), split_sentence(text.substr(idx1), max_len)]
+  if (text.substr(idx + 1, 1) === '”') idx = idx + 1;
+  return [text.substr(0, idx + 1), split_sentence(text.substr(idx + 1), max_len)]
 }
 
 function normalize(text, idx) {

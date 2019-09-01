@@ -9,6 +9,11 @@
   }
 }
 
+@font-face {
+  font-family: AXingKai;
+  src: url(assets/fonts/HanYiQuanTangShiJian-1.ttf);
+}
+
 /*!
  * Marp / Marpit Uncover theme
  *
@@ -21,16 +26,16 @@
 section {
   display: flex;
   flex-direction: column;
-  font-family:  'Cairo', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  font-family: 'AXingKai', 'Cairo', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
   flex-wrap: nowrap;
-  font-size: 26px;
+  font-size: 32px;
   height: 720px;
   justify-content: center;
   /* letter-spacing: 3px; */
   line-height: 1.6;
   padding: 30px 70px;
   position: relative;
-  text-align: left;
+  text-align: center;
   width: 1280px;
   z-index: 0;
   background: #fdfcff;
@@ -134,7 +139,7 @@ section p, section blockquote {
 }
 section h1, section h2, section h3, section h4, section h5, section h6 {
   margin: 15px 0 30px 0;
-  font-family: 'BioRhyme';
+  font-family: 'AXingKai', 'BioRhyme';
   text-align: center;
 }
 section h1 strong, section h2 strong, section h3 strong, section h4 strong, section h5 strong, section h6 strong {
@@ -180,6 +185,7 @@ section footer, section .note {
 section .note {
   border-top: 1px dashed #202228;
   padding-top: 5px;
+  text-align: left;
 }
 
 section a {
@@ -236,10 +242,10 @@ section table > tbody > tr:not(:last-child) > td, section table > tbody > tr:not
 }
 section blockquote {
   color: #9a4d55;
-  font-size: 85%;
   padding: 0 2em;
   position: relative;
   z-index: 0;
+  text-align: left;
 }
 section blockquote::before, section blockquote::after {
   content: url('./assets/uncover-quote.svg');
@@ -308,6 +314,10 @@ abbr[data-title]:focus::after {
   height: 24px;
   right: 70px;
   left: inherit;
+}
+
+section[data-marpit-advanced-background-split] {
+  padding: 30px;
 }
 
 /* @import url('https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/styles/default.min.css'); */
