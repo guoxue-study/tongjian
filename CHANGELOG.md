@@ -1,3 +1,6 @@
+## 0.9.0 (September 01, 2019)
+- update chapter 003
+
 ## 0.8.0 (September 01, 2019)
 - change font and regenerate meta
 
