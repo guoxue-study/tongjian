@@ -1,3 +1,6 @@
+## 0.10.0 (September 02, 2019)
+- update chapter 004-008
+
 ## 0.9.0 (September 01, 2019)
 - update chapter 003
 
