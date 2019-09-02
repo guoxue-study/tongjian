@@ -56,6 +56,11 @@ $(TARGET_DIR):
 merge-audio: # need to define CHAPTER, N1 and N2, e.g. N1=23 N2=24, result will be 23_24.mp3
 	@cd slides/assets/audios/$(CHAPTER) && ffmpeg -i "concat:$(N1).mp3|$(N2).mp3" -acodec copy $(N1)_$(N2).mp3
 
+correct-audio:
+	@cd slides/assets/audios/$(CHAPTER); rm $(N2).mp3;
+	@make gen-audios;
+	@make merge-audio
+
 split-audio: # need to define CHAPTER, N, SPLIT_AT, e.g. N=139, result will be 139_1.mp3, 139_2.mp3
 	@cd slides/assets/audios/$(CHAPTER) && ffmpeg -i ${N}.mp3 -acodec copy -ss 0 -to ${SPLIT_AT} ${N}_1.mp3 && ffmpeg -i ${N}.mp3 -acodec copy -ss ${SPLIT_AT} ${N}_2.mp3
 
