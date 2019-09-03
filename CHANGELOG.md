@@ -1,3 +1,6 @@
+## 0.11.2 (September 02, 2019)
+- fix readme generator
+
 ## 0.11.1 (September 02, 2019)
   - add generate html
 

@@ -5,14 +5,14 @@ const path = require('path')
 async function read(filename) {
   const content = JSON.parse(await fs.readFile(filename, 'utf8'))
   const name = path.basename(filename, '.json')
-  return `* [${content[0].text}](docs/${name}.html)`
+  return `* [${content[0].text.replace('# ', '')}](docs/${name}.html)`
 }
 
 
 async function processFile(outFile, content) {
   try {
     let data = await fs.readFile(outFile, 'utf8')
-    await fs.writeFile(outFile, data.replace(/---.*/g, `---\n\n${content}`))
+    await fs.writeFile(outFile, `${data.split('---')[0]}---\n\n${content}`)
   } catch (e) {
     console.log(e)
   }
