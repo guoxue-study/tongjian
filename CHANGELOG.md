@@ -1,3 +1,6 @@
+## 0.11.1 (September 02, 2019)
+  - add generate html
+
 ## 0.11.0 (September 02, 2019)
 - update chapter 009-011 and add audio resources til 074
 

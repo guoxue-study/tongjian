@@ -69,6 +69,8 @@ correct-audio:
 split-audio: # need to define CHAPTER, N, SPLIT_AT, e.g. N=139, result will be 139_1.mp3, 139_2.mp3
 	@cd slides/assets/audios/$(CHAPTER) && ffmpeg -i ${N}.mp3 -acodec copy -ss 0 -to ${SPLIT_AT} ${N}_1.mp3 && ffmpeg -i ${N}.mp3 -acodec copy -ss ${SPLIT_AT} ${N}_2.mp3
 
+gen-readme:
+	@tools/cli/gen_readme.js -i resources/_meta -o README.md
 
 include .makefiles/*.mk
 

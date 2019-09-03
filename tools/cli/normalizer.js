@@ -33,10 +33,10 @@ function normalize(text, idx) {
   return { text: text, audio: `${idx}.mp3` }
 }
 
-async function process_file(in_file, out_file) {
+async function processFile(inFile, outFile) {
   try {
-    let data = await read(in_file)
-    await fs.writeFile(out_file, JSON.stringify(data, null, 2))
+    let data = await read(inFile)
+    await fs.writeFile(outFile, JSON.stringify(data, null, 2))
   } catch (e) {
     console.log(e)
   }
@@ -62,9 +62,9 @@ async function main() {
   results = files
     .filter(name => name.endsWith('.md'))
     .map(name => {
-      const in_file = path.join(argv.i, name)
-      const out_file = path.join(argv.o, `${path.basename(name, '.md')}.json`)
-      return process_file(in_file, out_file)
+      const inFile = path.join(argv.i, name)
+      const outFile = path.join(argv.o, `${path.basename(name, '.md')}.json`)
+      return processFile(inFile, outFile)
     })
   return await Promise.all(results)
 }

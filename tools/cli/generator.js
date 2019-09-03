@@ -46,10 +46,10 @@ function normalize(content, audio_path) {
   return `${bg}${audio}${text}`
 }
 
-async function process_file(in_file, out_file) {
+async function process_file(inFile, outFile) {
   try {
-    let data = await read(in_file)
-    await fs.writeFile(out_file, data)
+    let data = await read(inFile)
+    await fs.writeFile(outFile, data)
   } catch (e) {
     console.log(e)
   }
@@ -57,17 +57,17 @@ async function process_file(in_file, out_file) {
 
 async function main() {
   const argv = require('yargs')
-  .option('input', {
-    alias: 'i',
-    describe: 'input path containing all json files'
-  })
-  .option('output', {
-    alias: 'o',
-    describe: 'output path to put generated md files'
-  })
-  .demandOption(['input', 'output'], 'Please provide both input path and output path')
-  .help()
-  .argv
+    .option('input', {
+      alias: 'i',
+      describe: 'input path containing all json files'
+    })
+    .option('output', {
+      alias: 'o',
+      describe: 'output path to put generated md files'
+    })
+    .demandOption(['input', 'output'], 'Please provide both input path and output path')
+    .help()
+    .argv
 
 
   const files = await fs.readdir(argv.i)
@@ -75,9 +75,9 @@ async function main() {
   results = files
     .filter(name => name.endsWith('.json'))
     .map(name => {
-      const in_file = path.join(argv.i, name)
-      const out_file = path.join(argv.o, `${path.basename(name, '.json')}.md`)
-      return process_file(in_file, out_file)
+      const inFile = path.join(argv.i, name)
+      const outFile = path.join(argv.o, `${path.basename(name, '.json')}.md`)
+      return process_file(inFile, outFile)
     })
   return await Promise.all(results)
 }
