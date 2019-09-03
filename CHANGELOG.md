@@ -1,3 +1,6 @@
+## 0.11.3 (September 02, 2019)
+- fix readme
+
 ## 0.11.2 (September 02, 2019)
 - fix readme generator
 
