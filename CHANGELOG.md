@@ -1,3 +1,8 @@
+## 0.13.0 (September 04, 2019)
+  - add 120-126
+  - add 111-119
+  - add resources 103-110
+
 ## 0.12.0 (September 04, 2019)
   - add 83-103 audio resources
 

@@ -5,7 +5,7 @@ const path = require('path')
 async function read(filename) {
   const content = JSON.parse(await fs.readFile(filename, 'utf8'))
   const name = path.basename(filename, '.json')
-  return `* [${content[0].text.replace('# ', '')}](docs/${name}.html)`
+  return `* ${name}: [${content[0].text.replace('# ', '')}](docs/${name}.html)`
 }
 
 
