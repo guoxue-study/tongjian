@@ -1,3 +1,6 @@
+## 0.15.2 (September 05, 2019)
+
+
 ## 0.15.1 (September 05, 2019)
   - use netlify to build the docs
 

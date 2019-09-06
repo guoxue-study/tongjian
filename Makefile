@@ -32,13 +32,14 @@ travis-deploy: release
 run:
 	@$(MARP) -s $(SRC_DIR)
 
-build: $(TARGET_DIR) copy-assets gen-index
+build: $(TARGET_DIR) gen-index
 	@$(MARP) -I slides -o $(TARGET_DIR)
 
 build-pdf: build
 	@$(MARP) -I slides -o $(TARGET_DIR) --allow-local-files --pdf
 
 build-netlify: build
+	@mv $(SRC_DIR)/assets $(TARGET_DIR)
 
 link-assets:
 	@ln -s $(SRC_DIR)/assets $(TARGET_DIR)/assets || true
