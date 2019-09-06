@@ -1,5 +1,8 @@
-## 0.15.2 (September 05, 2019)
+## 0.15.3 (September 05, 2019)
+  - fix netlify build error
 
+## 0.15.2 (September 05, 2019)
+  - fix netlify build timeout
 
 ## 0.15.1 (September 05, 2019)
   - use netlify to build the docs

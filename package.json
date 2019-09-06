@@ -1,6 +1,6 @@
 {
   "name": "tongjian",
-  "version": "0.15.2",
+  "version": "0.15.3",
   "description": "",
   "main": "index.js",
   "scripts": {
@@ -9,6 +9,7 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "@marp-team/marp-cli": "^0.13.0",
     "@marp-team/marp-core": "^0.12.1",
     "markdown-it-abbr": "^1.0.4",
     "markdown-it-container": "^2.0.0",

@@ -8,7 +8,7 @@ CLI_DIR=$(TOOL_DIR)/cli
 
 ENGINE=$(CLI_DIR)/engine.js
 
-MARP=marp --engine $(ENGINE) --theme $(ASSET_DIR)/custom.css --html true
+MARP=node_modules/@marp-team/marp-cli/marp-cli.js --engine $(ENGINE) --theme $(ASSET_DIR)/custom.css --html true
 
 init: install dep
 	@echo "Initializing the repo..."
@@ -18,7 +18,6 @@ travis-init: install dep
 
 install:
 	@echo "Install software required for this repo..."
-	@npm install -g @marp-team/marp-cli
 
 dep:
 	@echo "Install dependencies required for this repo..."
