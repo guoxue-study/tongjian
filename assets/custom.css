@@ -9,10 +9,11 @@
   }
 }
 
-@font-face {
+/* this font is pretty slow to load */
+/* @font-face {
   font-family: AXingKai;
   src: url(assets/fonts/HanYiQuanTangShiJian-1.ttf);
-}
+} */
 
 /*!
  * Marp / Marpit Uncover theme

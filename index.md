@@ -1,0 +1,9 @@
+# 《资治通鉴》胶片版
+
+## 了解更多
+
+欲了解本文档的来龙去脉，以及如何本地使用，见：[《资治通鉴》胶片版介绍](./intro.md)
+
+访问在线内容：[https://tyrchen.github.io/tongjian](https://tyrchen.github.io/tongjian)
+
+---

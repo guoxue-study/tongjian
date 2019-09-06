@@ -1,3 +1,7 @@
+## 0.15.1 (September 05, 2019)
+  - use netlify to build the docs
+
+
 ## 0.15.0 (September 05, 2019)
   - add 237-244
   - add 218-236
