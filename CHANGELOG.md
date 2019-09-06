@@ -1,3 +1,6 @@
+## 0.15.4 (September 05, 2019)
+  - fix the links to use netlify links
+
 ## 0.15.3 (September 05, 2019)
   - fix netlify build error
 
