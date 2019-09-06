@@ -1,3 +1,6 @@
+## 0.15.5 (September 05, 2019)
+  - beautify the index page
+
 ## 0.15.4 (September 05, 2019)
   - fix the links to use netlify links
 

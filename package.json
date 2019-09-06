@@ -1,6 +1,6 @@
 {
   "name": "tongjian",
-  "version": "0.15.4",
+  "version": "0.15.5",
   "description": "",
   "main": "index.js",
   "scripts": {
@@ -18,7 +18,8 @@
     "markdown-it-html5-media": "^0.6.0",
     "markdown-it-mark": "^2.0.0",
     "markdown-it-sub": "^1.0.0",
-    "markdown-it-sup": "^1.0.0"
+    "markdown-it-sup": "^1.0.0",
+    "ramda": "^0.26.1"
   },
   "dependencies": {
     "xf-tts": "^1.0.0",
