@@ -1,3 +1,6 @@
+## 0.17.1 (September 06, 2019)
+  - fix the package.json
+
 ## 0.17.0 (September 06, 2019)
   - fix typos and related audios
 
