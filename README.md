@@ -2,7 +2,7 @@
 
 [![Netlify Status](https://api.netlify.com/api/v1/badges/cbb92be1-875b-4c51-8052-e5331a8c07b5/deploy-status)](https://app.netlify.com/sites/tongjian/deploys)
 
-TLDR: [https://tongjian.netlify.com](https://tongjian.netlify.com)
+TLDR: [https://tongjian.qiaopang.com](https://tongjian.qiaopang.com)
 
 作为一个喜欢且经常读史读古文的程序员，《资治通鉴》这样的大部头我读起来还是觉得非常费力。首先是时间上的开销很大 —— 一页纸往往要读上半小时到一小时，其中免不了查阅词典，了解生僻字词的读音和释义；其次是难以深度阅读 —— 大量的地名人名和时间的关系，无法很快厘清，因而对错综复杂的历史事件读之依旧是懵懵懂懂；再次，无论是实体书的阅读，还是电子书的阅读，笔记都很难处理，比如人物的图像，事件（主要是战争）的地图，无法和原文很好地一一对照。最后，三百万字，二百九十四卷的内容，往往令读者还未开始阅读便自我放弃了。
 

@@ -40,7 +40,7 @@ function normalize(content, audio_path) {
   if (content.text.startsWith('臣光曰')) {
     bg = '![bg left](assets/images/simaguang.jpg)\n\n'
   } else if (content.text.startsWith('太史公曰')) {
-    bg = '![bg left](assets/images/simaqian.webp)\n\n'
+    bg = '![bg left](assets/images/simaqian.jpg)\n\n'
   }
 
   return `${bg}${audio}${text}`

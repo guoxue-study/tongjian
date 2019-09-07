@@ -1,3 +1,9 @@
+## 0.17.4 (September 07, 2019)
+  - change simaqian's image
+
+## 0.17.3 (September 07, 2019)
+  - fix typo
+
 ## 0.17.2 (September 07, 2019)
   - change to use custom domain
 
