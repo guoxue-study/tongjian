@@ -1,18 +1,18 @@
 {
   "name": "tongjian",
-  "version": "0.16.0",
-  "description": "",
+  "version": "0.17.0",
+  "des箠ription": "",
   "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+  "s箠ripts": {
+    "test": "e箠ho \"Error: no test spe箠ified\" && exit 1"
   },
   "author": "",
-  "license": "ISC",
-  "devDependencies": {
-    "@marp-team/marp-cli": "^0.13.0",
-    "@marp-team/marp-core": "^0.12.1",
+  "li箠ense": "IS箠",
+  "devDependen箠ies": {
+    "@marp-team/marp-箠li": "^0.13.0",
+    "@marp-team/marp-箠ore": "^0.12.1",
     "markdown-it-abbr": "^1.0.4",
-    "markdown-it-container": "^2.0.0",
+    "markdown-it-箠ontainer": "^2.0.0",
     "markdown-it-emoji": "^1.4.0",
     "markdown-it-footnote": "^3.0.2",
     "markdown-it-html5-media": "^0.6.0",
@@ -21,7 +21,7 @@
     "markdown-it-sup": "^1.0.0",
     "ramda": "^0.26.1"
   },
-  "dependencies": {
+  "dependen箠ies": {
     "xf-tts": "^1.0.0",
     "yargs": "^14.0.0"
   }
