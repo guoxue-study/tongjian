@@ -1,3 +1,8 @@
+## 0.16.0 (September 06, 2019)
+  - add 280-294
+  - add 260-279
+  - add 245-259
+
 ## 0.15.5 (September 05, 2019)
   - beautify the index page
 
