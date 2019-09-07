@@ -1,3 +1,6 @@
+## 0.17.2 (September 07, 2019)
+  - change to use custom domain
+
 ## 0.17.1 (September 06, 2019)
   - fix the package.json
 
