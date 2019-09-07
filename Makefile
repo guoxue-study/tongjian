@@ -66,6 +66,23 @@ $(TARGET_DIR):
 merge-audio: # need to define CHAPTER, N1 and N2, e.g. N1=23 N2=24, result will be 23_24.mp3
 	@cd slides/assets/audios/$(CHAPTER) && ffmpeg -i "concat:$(N1).mp3|$(N2).mp3" -acodec copy $(N1)_$(N2).mp3
 
+gen-all-audios:
+	num=1 ; while [[ $$num -le 9 ]] ; do \
+		make gen-audios CHAPTER=00$$num ; \
+		((num = num + 1)) ; \
+	done;
+	num=10 ; while [[ $$num -le 99 ]] ; do \
+		make gen-audios CHAPTER=0$$num ; \
+		((num = num + 1)) ; \
+	done;
+	num=100 ; while [[ $$num -le 294 ]] ; do \
+		make gen-audios CHAPTER=$$num ; \
+		((num = num + 1)) ; \
+	done
+
+
+
+
 correct-audio:
 	@cd slides/assets/audios/$(CHAPTER); rm $(N2).mp3;
 	@make gen-audios;
