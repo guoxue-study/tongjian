@@ -1,3 +1,6 @@
+## 0.18.0 (September 09, 2019)
+  - fix 012-013
+
 ## 0.17.4 (September 07, 2019)
   - change simaqian's image
 
