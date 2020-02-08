@@ -15,7 +15,7 @@ module.exports = opts => {
     .use(markdownItAbbr)
     .use(markdownItSup)
     .use(markdownItSub)
-    .use(markdownItEmoji)
+    // .use(markdownItEmoji)
     .use(html5Media)
     .use(markdownItContainer, 'note');
 
